@@ -3,7 +3,7 @@
 <head>
     <title>Cart to kitchen - List</title>
   	<meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <!-- Reset CSS -->
     <link rel="stylesheet" type="text/css" href="../assets/reset.css">
     <!-- Bootstrap 4.3.1 CDN -->
@@ -27,6 +27,23 @@
               <div class="text-right">list</div>
               </nav>
               <div class="container">
+                  <div class="row">
+                      <div class="col-12 col-md-6">
+                          <div class="GroceryList listBox">
+                              <li>
+                                  <ul>Bread</ul>
+                                  <ul>Peanut Butter</ul>
+                                  <ul>Jelly</ul>
+                              </li>
+                          </div>
+                      </div>
+                      <div class="col-12 col-md-6">
+                          <div id="map" class="GroceryLocation listBox">
+
+                          </div>
+                      </div>
+                  </div>
                 </div>
     <script src="list.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?callback=createMap&key=AIzaSyCnlCoa9k1kYFhjXO9rKOlsUkQXG0YP_J0" async defer></script>
 </body>
