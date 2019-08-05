@@ -1,15 +1,9 @@
 #logo {
     font-family: 'Pacifico', cursive;
 }
-body {
-    font-family: 'Pacifico', cursive;
-}
 
 .navbar {
-    background: yellow;
+    background: #DB3A34;
     border: none;
 }
 
-.jumbotron {
-	background-color: #8c149c;
-}
