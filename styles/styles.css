@@ -1,6 +1,17 @@
 #logo {
     font-family: 'Pacifico', cursive;
 }
-.jumbotron{
 
+/* override bootstrap hover color and border */
+.navbar navbar-light bg-light {
+    
+  }
+  
+  .navbar {
+   
+    border: none;
+  }
+  
+.jumbotron {
+	background-color: #8c149c;
 }
