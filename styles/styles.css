@@ -6,4 +6,6 @@
     background: #DB3A34;
     border: none;
 }
-
+.jumbotron {
+    background-color: rgb(122, 6, 103);
+}
