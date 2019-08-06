@@ -31,44 +31,36 @@ $(document).ready(function () {
 
                 }).then(function (response) {
 
-                    console.log(response);
 
                     var recipe = response.results;
                     for (i = 0; i < recipe.length; i++) {
-                        console.log(recipe[i]);
 
                         var recipeID = recipe.id;
 
-                        var queryURL = "https://api.spoonacular.com/recipes/search?query=" + recipeID + "&apiKey=4cf59167281f45719631aca9dd2155f2";
+                      
+                        console.log(response);
 
-                        $.ajax({
-                            url: queryURL,
-                            method: "GET"
 
-                        }).then(function (response) {
+                        var recipeBlurb = response.summary;
 
-                            var recipeBlurb = response.summary;
+                        var row = $("<div>"); row.addClass("row");
+                        var col1 = $("<div>");
+                        var col2 = $("<div>"); col1.addClass("col-sm-6"); col2.addClass("col-sm-6");
+                        var img = $("<img>"); img.attr("src", response.baseUri+response.results[i].image);
+                        
+                        
+                        var title = $("<h2>"); title.addClass("recipeTitles").text(recipe.title);
+                        var txt = $("<span>"); txt.text(recipeBlurb);
+                        $(".recipeDisplay").append(row);
+                        row.append(col1).append(col2);
+                        col1.append(img);
+                        col2.append(title).append(txt);
 
-                            var row = $("<div>"); row.addClass("row");
-                            var col1 = $("<div>");
-                            var col2 = $("<div>"); col1.addClass("col-sm-6"); col2.addClass("col-sm-6");
-                            var img = $("<img>"); img.attr("src", recipe.image);
-                            var title = $("<h2>"); title.addClass("recipeTitles").text(recipe.title);
-                            var txt = $("<span>"); txt.text(recipeBlurb);
-                            $(".recipeDisplay").append(row);
-                            row.append(col1).append(col2);
-                            col1.append(img);
-                            col2.append(title).append(txt);
-                            
-                        })
+
+                        
+
                     }
                     });
-
-
-
-
                 });
 
-
             })
-    
