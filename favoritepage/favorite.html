@@ -10,6 +10,8 @@
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 <!-- Google Fonts -->
 <link href="https://fonts.googleapis.com/css?family=Pacifico&display=swap" rel="stylesheet">
+<!-- FONT AWESOME  --------------------------------------------------------------------------------------------->
+<script src="https://kit.fontawesome.com/f53fc5f70f.js"></script>
 <!-- Global CSS -->
 <link rel="stylesheet" type="text/css" href="../styles/styles.css">
 <!-- FavoritePage CSS -->
@@ -19,15 +21,16 @@
 </head>
 
 <body>
-    <nav class="navbar">
-        <div class="text-left">Favorites</div>
+    <nav class="navbar" id="nav-bar">
+        <i class="fas fa-heart" id="faves-icon"></i>
         <div class="text-center" id="logo"> Cart to Kitchen</div>
-        <div class="text-right">List</div>
+        <i class="fas fa-bars" id="list-icon"></i>
     </nav>
 
     <div class="container" id="fav-container">
         <div class="list-group">
-                <a href="#" class="list-group-item list-group-item-action disabled" tabindex="-1" aria-disabled="true">My Saved Recipes</a>
+            <a href="#" class="list-group-item list-group-item-action disabled" tabindex="-1" aria-disabled="true">My
+                Saved Recipes</a>
             <a href="#" class="list-group-item list-group-item-action">Lamb Sauce</a>
             <a href="#" class="list-group-item list-group-item-action">Ratatouille</a>
             <a href="#" class="list-group-item list-group-item-action">It's Raining Meatballs</a>

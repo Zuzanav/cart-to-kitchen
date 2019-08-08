@@ -1,28 +1,3 @@
-#nav-bar {
-    background-color: 	#F5F5F5;
-    border-bottom-style: solid;
-    border-bottom-color: 	#707070;
-    border-bottom-width: 0.5px;
-    padding-top: 20px;
-    padding-bottom: 20px;
-}
-
-#logo {
-    color: #DB3A34;
-    font-family: 'Rock Salt', cursive;
-    font-size: 22px;
-}
-
-#faves-icon {
-    font-size: 22px;
-    color: #DB3A34;
-}
-
-#list-icon {
-    font-size: 22px;
-    color: #084C61;
-}
-
 #container {
     margin: 30px;
 }
