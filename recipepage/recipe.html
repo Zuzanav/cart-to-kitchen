@@ -11,8 +11,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" 
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-    <!-- JQUERY  --------------------------------------------------------------------------------------------------->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
 
      <!-- FIREBASE  ------------------------------------------------------------------------------------------------>
     <script src="https://www.gstatic.com/firebasejs/live/3.0/firebase.js"></script>
@@ -22,8 +21,13 @@
 
     <!-- GOOGLE FONTS  --------------------------------------------------------------------------------------------->
     <link href="https://fonts.googleapis.com/css?family=Rock+Salt&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Crimson+Text&display=swap" rel="stylesheet">
     
+    <!-- FONT AWESOME  --------------------------------------------------------------------------------------------->
+    <script src="https://kit.fontawesome.com/f53fc5f70f.js"></script>
 
+    <!-- JQUERY  --------------------------------------------------------------------------------------------------->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
     <!-- LINKS TO INTERNAL FILES =================================================================================-->
 
@@ -33,18 +37,26 @@
     <!-- CSS ------------------------------------------------------------------------------------------------------>
     <link rel="stylesheet" type="text/css" href="recipe.css">
     <!---=========================================================================================================-->
+    
 	
 </head>
 
 <body>
 
         <!-- NAVIGATION BAR -->
-        <nav class="navbar navbar-light bg-light">
-            <div class="text-left">Favorites</div>
+        <nav class="navbar" id="nav-bar">
+            <i class="fas fa-heart" id="faves-icon"></i>
             <div class="text-center" id="logo"> Cart to Kitchen</div>
-            <div class="text-right">List</div>
+            <i class="fas fa-bars" id="list-icon"></i>
         </nav>    
 
-        <div id="container"> </div>
+        <div id="container">
+            <div id="recipeTitle"></div>
+            <img id="recipeImg"></img>
+            <div id="recipeIngredients">
+                <div id="recipeInstructions"></div>
+                <p>Ingredients: </p>
+            </div>
+        </div>
         
  </body>
