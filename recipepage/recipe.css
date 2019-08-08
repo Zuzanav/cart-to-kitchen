@@ -1,4 +1,17 @@
-#logo {
-    color: #DB3A34;
-    font-family: 'Rock Salt', cursive;
+#container {
+    margin: 30px;
+}
+
+#recipeTitle {
+    font-size: 25px;
+    font-family: 'Crimson Text', serif;
+}
+
+#recipeIngredients {
+    font-family: 'Crimson Text', serif;
+    font-size: 14px;
+}
+
+p {
+    font-style: strong;
 }
