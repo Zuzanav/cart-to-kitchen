@@ -5,74 +5,78 @@
     <title>Cart to kitchen - List</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-
     <!-- Reset CSS -->
     <link rel="stylesheet" type="text/css" href="../assets/reset.css">
-
     <!-- Bootstrap 4.3.1 CDN -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Rock+Salt&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Crimson+Text&display=swap" rel="stylesheet">
-
     <!-- FONT AWESOME -->
     <script src="https://kit.fontawesome.com/f53fc5f70f.js"></script>
-
     <!-- Global CSS -->
     <link rel="stylesheet" type="text/css" href="../styles/styles.css">
-
     <!-- ListPage CSS -->
     <link rel="stylesheet" type="text/css" href="list.css">
-
     <!-- Jquery CDN -->
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-
+    <!-- Ajax -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <!-- Firebase JS -->
-    <script src="https://www.gstatic.com/firebasejs/live/3.0/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-database.js"></script>
 </head>
 
 <body>
-
-    <nav class="navbar" id="nav-bar">
-        <i class="fas fa-heart" id="faves-icon"></i>
-        <div class="text-center" id="logo"> Cart to Kitchen</div>
-        <i class="fas fa-bars" id="list-icon"></i>
-    </nav>
-
+        <nav class="navbar" id="nav-bar">
+                <i class="fas fa-heart" id="faves-icon"></i>
+                <div class="text-center" id="logo"> Cart to Kitchen</div>
+                <i class="fas fa-bars" id="list-icon"></i>
+            </nav>  
+            </div>
     <div class="container">
         <div class="row">
             <div class="col-12 col-md-6">
                 <h1>Grocery List</h1>
-                <div class="GroceryList listBox">
-                    <ul class="recipeItems"><span class="recipeName">PB&J</span>
-                        <li>Bread</li>
-                        <li>Peanut Butter</li>
-                        <li>Jelly</li>
-                    </ul>
-                    <ul class="recipeItems"><span class="recipeName">Classic Spaghetti</span>
-                        <li>Pasta</li>
-                        <li>Sauce</li>
-                        <li>Ground Beef</li>
-                    </ul>
-                    <ul class="recipeItems"><span class="recipeName">Grilled Lemon Salmon</span>
-                        <li>Salmon</li>
-                        <li>Lemon</li>
-                        <li>Dill</li>
-                        <li>Olive Oil</li>
-                    </ul>
+                <div class="GroceryList listBox" id="groceryList">
+                    <ul>
+                        <li></li>
+
                 </div>
             </div>
             <div class="col-12 col-md-6">
                 <h1>Find your store</h1>
                 <div id="map" class="GroceryLocation listBox">
+                </div>
+                <div class="row">
+                    <div class="col-2">
+                        <input id="submit" type="button" value="Search">
+                    </div>
+                    <div class="col-10">
+                        <input class="form-control" id="address" type="text"
+                            placeholder="Search your city or Zip Code here">
+                    </div>
+
+                </div>
+                <div class="row">
+                    <div class="col-2">
+                        <input id="place" type="button" value="Place">
+                    </div>
+                    <div class="col-10">
+                        <input class="form-control" id="store" type="text" placeholder="Search your store here">
+                    </div>
 
                 </div>
             </div>
         </div>
     </div>
     <script src="list.js"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?callback=createMap&key=AIzaSyCnlCoa9k1kYFhjXO9rKOlsUkQXG0YP_J0"
-        async defer></script>
+    <!-- <script src="https://maps.googleapis.com/maps/api/js?callback=createMap&key=AIzaSyCnlCoa9k1kYFhjXO9rKOlsUkQXG0YP_J0" async defer></script> -->
+    <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCnlCoa9k1kYFhjXO9rKOlsUkQXG0YP_J0&callback=initMap&initPlace">
+    </script>
+    <!-- <script async defer
+        src="https://maps.googleapis.com/maps/api/js?callback=createMap&libraries=places&key=AIzaSyCnlCoa9k1kYFhjXO9rKOlsUkQXG0YP_J0"> -->
+    </script>
 </body>
