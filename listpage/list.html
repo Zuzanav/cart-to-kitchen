@@ -16,8 +16,11 @@
     <link rel="stylesheet" type="text/css" href="../styles/styles.css">
     <!-- Jquery CDN -->
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <!-- Ajax -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <!-- Firebase JS -->
-    <script src="https://www.gstatic.com/firebasejs/live/3.0/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-database.js"></script>
 </head>
 <body>
         <nav class="navbar">
@@ -30,7 +33,10 @@
                   <div class="row">
                       <div class="col-12 col-md-6">
                           <h1>Grocery List</h1>
-                          <div class="GroceryList listBox">
+                          <div class="GroceryList listBox" id="groceryList">
+                              <ul>
+                                  <li></li>
+                              </ul>
                               <ul class="recipeItems"><span class="recipeName">PB&J</span>
                                   <li>Bread</li>
                                   <li>Peanut Butter</li>
@@ -52,11 +58,34 @@
                       <div class="col-12 col-md-6">
                           <h1>Find your store</h1>
                           <div id="map" class="GroceryLocation listBox">
-
-                          </div>
+                        </div>
+                                <div class="row">
+                                    <div class="col-2">
+                                            <input id="submit" type="button" value="Search">
+                                    </div>
+                                    <div class="col-10">
+                                            <input class="form-control" id="address" type="text" placeholder="Search your city or Zip Code here">
+                                        </div>
+                                    
+                                </div>
+                                <div class="row">
+                                        <div class="col-2">
+                                                <input id="place" type="button" value="Place">
+                                        </div>
+                                        <div class="col-10">
+                                                <input class="form-control" id="store" type="text" placeholder="Search your store here">
+                                            </div>
+                                        
+                                    </div>
                       </div>
                   </div>
                 </div>
     <script src="list.js"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?callback=createMap&key=AIzaSyCnlCoa9k1kYFhjXO9rKOlsUkQXG0YP_J0" async defer></script>
+    <!-- <script src="https://maps.googleapis.com/maps/api/js?callback=createMap&key=AIzaSyCnlCoa9k1kYFhjXO9rKOlsUkQXG0YP_J0" async defer></script> -->
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCnlCoa9k1kYFhjXO9rKOlsUkQXG0YP_J0&callback=initMap&initPlace">
+    </script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?callback=createMap&libraries=places&key=AIzaSyCnlCoa9k1kYFhjXO9rKOlsUkQXG0YP_J0">
+    </script>
 </body>
