@@ -1,81 +1,48 @@
-$(document).ready(function(){
-
-
-
-// Global variables
-// var map;
-var ingredientArr = [];
-
-var firebaseConfig = {
-    apiKey: "AIzaSyCcqYafYLVS5QvocHANk0illfsIYUqH3I4",
-    authDomain: "cart-to-kitchen-4c135.firebaseapp.com",
-    databaseURL: "https://cart-to-kitchen-4c135.firebaseio.com",
-    projectId: "cart-to-kitchen-4c135",
-    storageBucket: "cart-to-kitchen-4c135.appspot.com",
-    messagingSenderId: "421625026826",
-    appId: "1:421625026826:web:988bc65eda645a60"
-  };
-  // Initialize Firebase
-  firebase.initializeApp(firebaseConfig);
-  var database = firebase.database();
-
-    database.ref().on("child_added", function(childSnapshot) {
-
-    // Then we console.log the value of snapshot
-    console.log(childSnapshot.val().ingredient_name);
-    var list = childSnapshot.val().ingredient_name;
-    ingredientArr.push(list);
-    console.log(ingredientArr);
-
-    // Update the clickCounter variable with data from the database.
-    // clickCounter = snapshot.val().clickCount;
-
-    // Then we change the html associated with the number.
-    // $("#click-value").text(snapshot.val().clickCount);
-
-    // If there is an error that Firebase runs into -- it will be stored in the "errorObject"
-    // Again we could have named errorObject anything we wanted.
-  }, function(errorObject) {
-
-    // In case of error this will print the error
-    console.log("The read failed: " + errorObject.code);
-  });
-
-  database.ref().orderByChild("dateAdded").limitToLast(1).on("child_added", function(snapshot) {
-    for (let i = 0; i < ingredientArr.length; i++) {
-        //    alert("im in a loop");   
-        // console.log(ingredientArr[i]);
-        $("#groceryList").append(ingredientArr[i]);    
-            
-        };
-  });
-
-
-
-
-
-});    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // AJAX
 // Spoonacular API key = 4cf59167281f45719631aca9dd2155f2
 // GooglePlaces API key = AIzaSyCnlCoa9k1kYFhjXO9rKOlsUkQXG0YP_J0
+
+$(document).ready(function () {
+
+    var ingredientArr = [];
+
+    var firebaseConfig = {
+        apiKey: "AIzaSyCcqYafYLVS5QvocHANk0illfsIYUqH3I4",
+        authDomain: "cart-to-kitchen-4c135.firebaseapp.com",
+        databaseURL: "https://cart-to-kitchen-4c135.firebaseio.com",
+        projectId: "cart-to-kitchen-4c135",
+        storageBucket: "cart-to-kitchen-4c135.appspot.com",
+        messagingSenderId: "421625026826",
+        appId: "1:421625026826:web:988bc65eda645a60"
+    };
+
+    firebase.initializeApp(firebaseConfig);
+    var database = firebase.database();
+
+    database.ref().on("child_added", function (childSnapshot) {
+
+        console.log(childSnapshot.val().ingredient_name);
+        var list = childSnapshot.val().ingredient_name;
+        ingredientArr.push(list);
+        console.log(ingredientArr);
+
+    }, function (errorObject) {
+
+        console.log("The read failed: " + errorObject.code);
+    });
+
+    database.ref().orderByChild("dateAdded").limitToLast(1).on("child_added", function () {
+        for (let i = 0; i < ingredientArr.length; i++) {
+            $("#groceryList").append("<li>" + ingredientArr[i] + "</li>");
+
+        };
+    });
+
+
+
+
+
+});
 
 // Functions for Map
 //   function initPlaces() {
@@ -126,26 +93,28 @@ function geocodeAddress(geocoder, resultsMap) {
 var input = document.getElementById("store");
 var searchbox = new google.maps.places.Searchbox(input);
 
-map.addListener('bounds_changed' , function(){
+map.addListener('bounds_changed', function () {
     searchbox.setBounds(map.getBounds());
 });
 
 var markers = [];
 
-searchbox.addListener('places_changed', function(){
+searchbox.addListener('places_changed', function () {
     var places = searchBox.getPlaces();
 
     if (places.length === 0)
-    return;
+        return;
 
-    markers.forEach(function (m) { m.setMap(null); });
+    markers.forEach(function (m) {
+        m.setMap(null);
+    });
     markers = [];
-    
+
     var bounds = new google.maps.LatLngBounds();
 
     places.forEach(function (p) {
         if (!p.geometry)
-        return;
+            return;
         markers.push(new google.maps.Marker({
             map: map,
             title: p.name,
@@ -153,9 +122,9 @@ searchbox.addListener('places_changed', function(){
         }));
 
         if (p.geometry.viewport)
-        bounds.union(p.geometry.viewport);
+            bounds.union(p.geometry.viewport);
         else
-        bounds.extend(p.geometry.location);
+            bounds.extend(p.geometry.location);
     });
     map.fitBounds(bounds);
 });
@@ -177,4 +146,3 @@ searchbox.addListener('places_changed', function(){
 //         console.log('ERR', err);
 //     })
 // });
-
