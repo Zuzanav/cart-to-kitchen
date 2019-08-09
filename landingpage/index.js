@@ -48,7 +48,11 @@ $(document).ready(function () {
                 var col2 = $("<div>"); 
                 col1.addClass("col-sm-6"); 
                 col2.addClass("col-sm-6");
-                var img = $("<img>"); img.attr("src", response.baseUri+response.results[i].image);
+                //var img = $("<img>"); img.attr("src", response.baseUri+response.results[i].image);
+                var ImagePlaceholder = $("#imagePlaceholder"); 
+                ImagePlaceholder.attr("src", response.baseUri+response.results[0].image);
+                //ImagePlaceholder.attr(response.baseUri+response.results[0].image);
+
                 // var title = $("#title"); title.text(response.results[i].title);
                 // var id = $("#id"); id.text(response.results[i].id);
                 // var desc = $("#desc"); desc.text(response.results[0].desc);
