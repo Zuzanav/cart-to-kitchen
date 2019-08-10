@@ -14,14 +14,17 @@
 
 
      <!-- FIREBASE  ------------------------------------------------------------------------------------------------>
-    <script src="https://www.gstatic.com/firebasejs/live/3.0/firebase.js"></script>
+     <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-database.js"></script>
 
-     <!-- CDN ------------------------------------------------------------------------------------------------------>
+     <!-- MOMENT.JS CDN -------------------------------------------------------------------------------------------->
     <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
 
     <!-- GOOGLE FONTS  --------------------------------------------------------------------------------------------->
     <link href="https://fonts.googleapis.com/css?family=Rock+Salt&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Crimson+Text&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lexend+Exa&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lexend+Exa|Lora&display=swap" rel="stylesheet">
     
     <!-- FONT AWESOME  --------------------------------------------------------------------------------------------->
     <script src="https://kit.fontawesome.com/f53fc5f70f.js"></script>
@@ -48,15 +51,61 @@
             <i class="fas fa-heart" id="faves-icon"></i>
             <div class="text-center" id="logo"> Cart to Kitchen</div>
             <i class="fas fa-bars" id="list-icon"></i>
-        </nav>    
+        </nav>   
 
-        <div id="container">
+
+        <div id="wrapper">
+
+            <!-- RECIPE TITLE ---------->
             <div id="recipeTitle"></div>
-            <img id="recipeImg"></img>
-            <div id="recipeIngredients">
-                <div id="recipeInstructions"></div>
-                <p>Ingredients: </p>
+
+
+            <div class="container">
+
+                <!-- ROW 1---------------------------------------------------------------->
+                <div class="row"> 
+
+                    <!-- IMAGE -->
+                    <div class="col-sm-6">
+                        <img class="img-fluid" id="recipeImg"></img>
+                    </div>
+
+                    <!-- INGREDIENTS -->
+                    <div id="all_ingredients" class="col-sm-6">
+                        <div id="ingredients-section">
+                            <p id="ingredients_header"> Ingredients: </p>
+                        </div>
+                    </div> <!-- end row with image and ingredients-->
+
+                </div> <!-- END ROW 1 ---------------------------------------------------->
+
+
+                <!-- ROW 2--------------------------------------------------------------->
+                
+
+
+                <!-- FAVORITES BUTTON -->
+            <div class="text-center">
+                <button  id="fav-btn"> Add to Favorites  </button>
+            </div>
+            <br>
+
+            <hr>
+
+            <!-- INSTRUCTIONS & INGREDIENTS BOX --------->
+            <div id="recipeIngredients"> <!-- container with instructions and ingredients -->
+               
+                <div id="preparation">
+
+                    <!-- INSTRUCTIONS ---------->
+                    <p id="instructions_header">Preparation: </p>
+                    <div id="recipeInstructions"></div>
+
+                </div>
+
+
+                
             </div>
         </div>
-        
+
  </body>
