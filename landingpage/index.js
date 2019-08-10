@@ -17,7 +17,7 @@ $(document).ready(function () {
 
     //Zuzana's Addition
 
-    var queryURL = "https://api.spoonacular.com/recipes/random?number=10&apiKey=4cf59167281f45719631aca9dd2155f2"
+    var queryURL = "https://api.spoonacular.com/recipes/random?number=10&apiKey=444bf8ec1b304306aa66db58304dd302"
 
     $.ajax({
         url: queryURL,
@@ -30,7 +30,7 @@ $(document).ready(function () {
 
         for (i = 0; i <results.length; i++) {
 
-            var queryURL = "https://api.spoonacular.com/recipes/" + results[i].id + "/summary?apiKey=4cf59167281f45719631aca9dd2155f2"
+            var queryURL = "https://api.spoonacular.com/recipes/" + results[i].id + "/summary?apiKey=444bf8ec1b304306aa66db58304dd302"
         
              $.ajax({
                  url: queryURL,
@@ -90,7 +90,7 @@ $(document).ready(function () {
 
         $(".recipeDisplay").empty();
 
-        var queryURL = "https://api.spoonacular.com/recipes/search?query=" + recipeSearch + "&number=10&apiKey=4cf59167281f45719631aca9dd2155f2"
+        var queryURL = "https://api.spoonacular.com/recipes/search?query=" + recipeSearch + "&number=10&apiKey=444bf8ec1b304306aa66db58304dd302"
 
         $.ajax({
             url: queryURL,
@@ -103,7 +103,7 @@ $(document).ready(function () {
     
             for (i = 0; i <results.length; i++) {
     
-                var queryURL = "https://api.spoonacular.com/recipes/" + results[i].id + "/summary?apiKey=4cf59167281f45719631aca9dd2155f2"
+                var queryURL = "https://api.spoonacular.com/recipes/" + results[i].id + "/summary?apiKey=444bf8ec1b304306aa66db58304dd302"
             
                  $.ajax({
                      url: queryURL,
@@ -156,6 +156,13 @@ $(document).ready(function () {
         
             }
         })
+
+        });
+        $(document).on("click", ".recipe-card" , function() {
+
+            var recipeID = ($(this).attr("data-recipeId"));
+
+            localStorage.setItem("recipeId", recipeID);
 
         });
 
