@@ -19,7 +19,7 @@ $(document).ready(function () {
     firebase.initializeApp(firebaseConfig);
     var database = firebase.database();
 
-    database.ref().on("child_added", function (childSnapshot) {
+    database.ref("/list").on("child_added", function (childSnapshot) {
 
         console.log(childSnapshot.val().ingredient_name);
         var list = childSnapshot.val().ingredient_name;
@@ -31,7 +31,7 @@ $(document).ready(function () {
         console.log("The read failed: " + errorObject.code);
     });
 
-    database.ref().orderByChild("dateAdded").limitToLast(1).on("child_added", function () {
+    database.ref("/list").orderByChild("dateAdded").limitToLast(1).on("child_added", function () {
         for (let i = 0; i < ingredientArr.length; i++) {
             $("#groceryList").append("<li>" + ingredientArr[i] + "</li>");
 

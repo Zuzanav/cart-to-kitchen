@@ -8,8 +8,11 @@
 /* Classes */
 /* ----------------------------- */
 .listBox {
-    border-style: solid;
+    padding: 5px;
+    background-color: #F5F5F5;
+    min-height: 400px;
 }
+
 
 
 /* IDs */
