@@ -17,6 +17,8 @@ $(document).ready(function () {
 
     //Zuzana's Addition
 
+    $(".recipeDisplay").empty();
+
     var queryURL = "https://api.spoonacular.com/recipes/random?number=10&apiKey=444bf8ec1b304306aa66db58304dd302"
 
     $.ajax({
