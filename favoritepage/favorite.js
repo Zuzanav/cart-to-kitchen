@@ -34,7 +34,7 @@ $(document).ready(function () {
 
                 // Print favorites
                 var cardDiv = $("<div>");
-                cardDiv.addClass("card mb-3")
+                cardDiv.addClass("card mb-3").addClass("recipe-card");
 
                 var row = $("<div>");
                 row.addClass("row").addClass("no-gutters");

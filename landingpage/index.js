@@ -17,7 +17,71 @@ $(document).ready(function () {
 
     //Zuzana's Addition
 
+    var queryURL = "https://api.spoonacular.com/recipes/random?number=10&apiKey=4cf59167281f45719631aca9dd2155f2"
 
+    $.ajax({
+        url: queryURL,
+        method: "GET"
+
+    }).then(function (response) {
+        console.log(response);
+
+        var results = response.recipes;
+
+        for (i = 0; i <results.length; i++) {
+
+            var queryURL = "https://api.spoonacular.com/recipes/" + results[i].id + "/summary?apiKey=4cf59167281f45719631aca9dd2155f2"
+        
+             $.ajax({
+                 url: queryURL,
+                 method: "GET"
+        
+             }).then(function (response) {
+    
+                console.log(response);
+                var title = response.title;
+                var summary = response.summary;
+                var imageURL = "https://spoonacular.com/recipeImages/" + response.id + "-312x231.jpg"
+
+                // Print favorites
+                var cardDiv = $("<div>");
+                cardDiv.addClass("card mb-3").addClass("recipe-card");
+
+                var row = $("<div>");
+                row.addClass("row").addClass("no-gutters");
+
+                var imgCol = $("<div>");
+                imgCol.addClass("col-md-4");
+
+                var img = $("<img>");
+                img.addClass("card-img");
+                img.attr("src", imageURL);
+
+                var contentCol = $("<div>");
+                contentCol.addClass("col-md-8");
+
+                var bodyDiv = $("<div>");
+                bodyDiv.addClass("card-body");
+
+                var h5 = $("<h5>");
+                h5.addClass("card-title");
+                h5.text(title);
+
+                var p = $("<p>");
+                p.addClass("card-text");
+                p.html(summary);
+
+                bodyDiv.append(h5).append(p);
+                contentCol.append(bodyDiv);
+                imgCol.append(img);
+                row.append(imgCol).append(contentCol);
+                cardDiv.append(row);
+                $(".recipeDisplay").append(cardDiv);
+
+                })
+    
+        }
+    })
 
     $("#search-button").on("click", function () {
         var recipeSearch = $("#search-term").val();
