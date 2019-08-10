@@ -180,6 +180,8 @@ AutocompleteDirectionsHandler.prototype.route = function () {
 //     });
 // }
 
+//     // var queryURL = "https://maps.googleapis.com/maps/api/place/findplacefromtext/json?input=" + storeTerm + "&inputtype=textquery&fields=openin_hours&key=AIzaSyCnlCoa9k1kYFhjXO9rKOlsUkQXG0YP_J0";
+//     var queryURL = "http://maps.googleapis.com/maps/api/place/findplacefromtext/json?input=mongolian%20grill&inputtype=textquery&fields=photos,formatted_address,name,opening_hours,rating&locationbias=circle:2000@47.6918452,-122.2226413&key=AIzaSyCnlCoa9k1kYFhjXO9rKOlsUkQXG0YP_J0"
 
 // function geocodeAddress(geocoder, resultsMap) {
 //     var address = document.getElementById('address').value;
