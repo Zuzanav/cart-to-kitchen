@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>Cart to kitchen - List</title>
+    <title>Cart to Kitchen - List</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <!-- Reset CSS -->
@@ -29,17 +29,17 @@
 </head>
 
 <body>
-        <nav class="navbar" id="nav-bar">
-                <i class="fas fa-heart" id="faves-icon"></i>
-                <div class="text-center" id="logo"> Cart to Kitchen</div>
-                <i class="fas fa-bars" id="list-icon"></i>
-            </nav>  
-            </div>
+    <nav class="navbar" id="nav-bar">
+        <i class="fas fa-heart" id="faves-icon"></i>
+        <div class="text-center" id="logo"> Cart to Kitchen</div>
+        <i class="fas fa-bars" id="list-icon"></i>
+    </nav>
+    </div>
     <div class="container">
         <div class="row">
             <div class="col-12 col-md-6">
                 <h1>Grocery List</h1>
-                <div class="GroceryList listBox" id="groceryList">
+                <div id="groceryList" class="GroceryList listBox">
                     <ul>
                         <li></li>
 
@@ -50,33 +50,34 @@
                 <div id="map" class="GroceryLocation listBox">
                 </div>
                 <div class="row">
-                    <div class="col-2">
-                        <input id="submit" type="button" value="Search">
-                    </div>
-                    <div class="col-10">
-                        <input class="form-control" id="address" type="text"
-                            placeholder="Search your city or Zip Code here">
+
+                    <div class="col-12">
+                        <input id="starting-place" class="form-control" type="text"
+                            placeholder="Enter your city or Zip Code here">
                     </div>
 
                 </div>
                 <div class="row">
-                    <div class="col-2">
-                        <input id="place" type="button" value="Place">
-                    </div>
-                    <div class="col-10">
-                        <input class="form-control" id="store" type="text" placeholder="Search your store here">
+                    <div class="col-12">
+                        <input id="search-places" class="form-control" type="text" placeholder="Search for your store">
                     </div>
 
+                </div>
+                <div id="mode-selector" class="controls">
+                    <input type="radio" name="type" id="changemode-walking" checked="checked">
+                    <label for="changemode-walking">Walking</label>
+
+                    <input type="radio" name="type" id="changemode-transit">
+                    <label for="changemode-transit">Transit</label>
+
+                    <input type="radio" name="type" id="changemode-driving">
+                    <label for="changemode-driving">Driving</label>
                 </div>
             </div>
         </div>
     </div>
     <script src="list.js"></script>
-    <!-- <script src="https://maps.googleapis.com/maps/api/js?callback=createMap&key=AIzaSyCnlCoa9k1kYFhjXO9rKOlsUkQXG0YP_J0" async defer></script> -->
-    <script async defer
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCnlCoa9k1kYFhjXO9rKOlsUkQXG0YP_J0&callback=initMap&initPlace">
-    </script>
-    <!-- <script async defer
-        src="https://maps.googleapis.com/maps/api/js?callback=createMap&libraries=places&key=AIzaSyCnlCoa9k1kYFhjXO9rKOlsUkQXG0YP_J0"> -->
-    </script>
+    <script
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCnlCoa9k1kYFhjXO9rKOlsUkQXG0YP_J0&libraries=places&callback=initMap"
+        async defer></script>
 </body>
