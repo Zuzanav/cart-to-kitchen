@@ -23,6 +23,9 @@
 
   <!-- Landing Page CSS ---------------------------------------------------------------------------------------->
   <link rel="stylesheet" type="text/css" href="styles/styles.css">
+  <link rel="stylesheet" type="text/css" href="listpage/list.css">
+  <link rel="stylesheet" type="text/css" href="favoritepage/favorite.css">
+  <link rel="stylesheet" type="text/css" href="recipepage/recipe.css">
 
   <!--  Firebase JS SDK  ---------------------------------------------------------------------------------------->
   <script src="https://www.gstatic.com/firebasejs/6.3.4/firebase-app.js"></script>
@@ -41,11 +44,11 @@
 <body>
 
   <nav class="navbar" id="nav-bar">
-    <i class="fas fa-heart" id="faves-icon"></i>
-    <div class="text-center" id="logo"> Cart to Kitchen</div>
-    <i class="fas fa-bars" id="list-icon"></i>
+    <a href="favoritepage/favorite.html" class="fas fa-heart" id="faves-icon"></a>
+    <a href="index.html" class="text-center" id="logo"> Cart to Kitchen</a>
+    <a href="listpage/list.html" class="fas fa-bars" id="list-icon"></a>
   </nav>
-
+  <br>
   <div class="container">
     <div class="jumbotron">
 
@@ -53,13 +56,18 @@
       <div class="input-group mb-3">
         <div class="input-group-prepend">
           <button class="btn btn-outline-secondary" type="button" id="search-button">search
+              <a href="recipepage/recipe.html"></a>
+          
           </button>
-
+         
         </div>
         <input type="text" class="form-control" id="search-term">
+        
       </div>
     </div>
+    
   </div>
+  <img id="imagePlaceholder" src=""></img>
 
   <div class="container recipeDisplay">
     <!-- <div class="row">
