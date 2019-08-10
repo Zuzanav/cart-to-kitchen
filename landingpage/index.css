@@ -1,3 +1,4 @@
 .jumbotron {
 	background-color: #8c149c;
+	background-image: image("../assets/images/unsplash.jpg");
 }

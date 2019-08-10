@@ -6,6 +6,16 @@
     padding-top: 20px;
     padding-bottom: 20px;
 }
+input[type="text"]::placeholder {  
+                  
+    /* Firefox, Chrome, Opera */ 
+    text-align: right; 
+} 
+.jumbotron {
+	
+    background-image: url("../assets/images/unsplash.jpg"); 
+    height: 500px;
+}
 
 #logo {
     color: #DB3A34;
@@ -22,3 +32,7 @@
     font-size: 22px;
     color: #084C61;
 }
+#search-button{
+    width: 100%;
+}
+

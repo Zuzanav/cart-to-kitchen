@@ -17,6 +17,7 @@
 
  <!-- FONT AWESOME -->
  <script src="https://kit.fontawesome.com/f53fc5f70f.js"></script>
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
   <!-- Global CSS -->
 <link rel="stylesheet" type="text/css" href="styles/styles.css">
@@ -48,24 +49,27 @@
     <a href="index.html" class="text-center" id="logo"> Cart to Kitchen</a>
     <a href="listpage/list.html" class="fas fa-bars" id="list-icon"></a>
   </nav>
-  <br>
-  <div class="container">
-    <div class="jumbotron">
-
-
-      <div class="input-group mb-3">
-        <div class="input-group-prepend">
-          <button class="btn btn-outline-secondary" type="button" id="search-button">search
-              <a href="recipepage/recipe.html"></a>
-          
-          </button>
+  
+  
+      <div class="jumbotron jumbotron-fluid" style="display: flex; align-items:center;">
+        <div class="container">
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+               
+              <button class="btn" type="button" id="search-button">search
+                <a href="recipepage/recipe.html"></a>
+                
+              </button> 
          
-        </div>
-        <input type="text" class="form-control" id="search-term">
-        
-      </div>
+                 </div>
+                 
+                   <input type="text" class="form-control" id="search-term" placeholder="&#xF002; Search" style="font-family:Arial, FontAwesome">
+                 
+                
+          </div> 
+        </div>   
+      </div>   
     </div>
-    
   </div>
   <img id="imagePlaceholder" src=""></img>
 
