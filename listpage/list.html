@@ -1,62 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <title>Cart to kitchen - List</title>
-  	<meta charset="UTF-8">
+    <title>Cart to Kitchen - List</title>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <!-- Reset CSS -->
     <link rel="stylesheet" type="text/css" href="../assets/reset.css">
     <!-- Bootstrap 4.3.1 CDN -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Pacifico&display=swap" rel="stylesheet">
-    <!-- ListPage CSS -->
-    <link rel="stylesheet" type="text/css" href="list.css">
+    <link href="https://fonts.googleapis.com/css?family=Rock+Salt&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Crimson+Text&display=swap" rel="stylesheet">
+    <!-- FONT AWESOME -->
+    <script src="https://kit.fontawesome.com/f53fc5f70f.js"></script>
     <!-- Global CSS -->
     <link rel="stylesheet" type="text/css" href="../styles/styles.css">
+    <!-- ListPage CSS -->
+    <link rel="stylesheet" type="text/css" href="list.css">
     <!-- Jquery CDN -->
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <!-- Ajax -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <!-- Firebase JS -->
-    <script src="https://www.gstatic.com/firebasejs/live/3.0/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-database.js"></script>
 </head>
-<body>
-        <nav class="navbar">
-            <div class="text-left">Favorites</div>
-            
-              <div class="text-center" id="logo"> Cart to kitchen</div>
-              <div class="text-right">List</div>
-              </nav>
-              <div class="container">
-                  <div class="row">
-                      <div class="col-12 col-md-6">
-                          <h1>Grocery List</h1>
-                          <div class="GroceryList listBox">
-                              <ul class="recipeItems"><span class="recipeName">PB&J</span>
-                                  <li>Bread</li>
-                                  <li>Peanut Butter</li>
-                                  <li>Jelly</li>
-                              </ul>
-                              <ul class="recipeItems"><span class="recipeName">Classic Spaghetti</span>
-                                    <li>Pasta</li>
-                                    <li>Sauce</li>
-                                    <li>Ground Beef</li>
-                                </ul>
-                                <ul class="recipeItems"><span class="recipeName">Grilled Lemon Salmon</span>
-                                        <li>Salmon</li>
-                                        <li>Lemon</li>
-                                        <li>Dill</li>
-                                        <li>Olive Oil</li>
-                                    </ul>
-                          </div>
-                      </div>
-                      <div class="col-12 col-md-6">
-                          <h1>Find your store</h1>
-                          <div id="map" class="GroceryLocation listBox">
 
-                          </div>
-                      </div>
-                  </div>
+<body>
+    <nav class="navbar" id="nav-bar">
+        <a href="../favoritepage/favorite.html" class="fas fa-heart" id="faves-icon"></a>
+        <a href="../index.html" class="text-center" id="logo"> Cart to Kitchen</a>
+        <a href="list.html" class="fas fa-bars" id="list-icon"></a>
+      </nav>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-md-6">
+                <h1>Grocery List</h1>
+                <div class="GroceryList listBox" id="groceryList">
+                    <ul>
+                        <li></li>
+
                 </div>
+            </div>
+            <div class="col-12 col-md-6">
+                <h1>Find your store</h1>
+                <div id="map" class="GroceryLocation listBox">
+                </div>
+                <div class="row">
+
+                    <div class="col-12">
+                        <input id="starting-place" class="form-control" type="text"
+                            placeholder="Enter your city or Zip Code here">
+                    </div>
+
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <input id="search-places" class="form-control" type="text" placeholder="Search for your store">
+                    </div>
+
+                </div>
+                <div id="mode-selector" class="controls">
+                    <input type="radio" name="type" id="changemode-walking" checked="checked">
+                    <label for="changemode-walking">Walking</label>
+
+                    <input type="radio" name="type" id="changemode-transit">
+                    <label for="changemode-transit">Transit</label>
+
+                    <input type="radio" name="type" id="changemode-driving">
+                    <label for="changemode-driving">Driving</label>
+                </div>
+            </div>
+        </div>
+    </div>
     <script src="list.js"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?callback=createMap&key=AIzaSyCnlCoa9k1kYFhjXO9rKOlsUkQXG0YP_J0" async defer></script>
+    <script
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCnlCoa9k1kYFhjXO9rKOlsUkQXG0YP_J0&libraries=places&callback=initMap"
+        async defer></script>
 </body>
