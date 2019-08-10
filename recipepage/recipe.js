@@ -1,10 +1,10 @@
 
 //retrieve user selected recipe ID from local storage ----------------------------
-//var userSelectedID = localStorage.getItem("recipe_id");
-// console.log(userSelectedID);
+var userSelectedID = localStorage.getItem("recipeId");
+console.log(userSelectedID);
 
 // this user selected ID is temporarily assigned a random recipe for the purpose of building and testing this page 
-var userSelectedID = 	1003464
+// var userSelectedID = 	1003464
 
 //=====================================================================================================================================
 
