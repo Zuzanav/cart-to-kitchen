@@ -46,7 +46,9 @@ $(document).ready(function () {
 
     });
 
-
+    $(document).on("click", ".remove-fav", function() {
+        console.log("I've been clicked!");
+    })
 
     $(document).on("click", ".recipe-card", function () {
 
@@ -59,7 +61,7 @@ $(document).ready(function () {
     function printCards() {
         for (i = 0; i < favoritesArray.length; i++) {
 
-            var queryURL = "https://api.spoonacular.com/recipes/" + favoritesArray[i] + "/summary?apiKey=3bcac49f5a044aedacf4b3fb25eb9f89"
+            var queryURL = "https://api.spoonacular.com/recipes/" + favoritesArray[i] + "/summary?apiKey=c0dd1224e5f348c785c7651d307e1e88"
             console.log(queryURL);
 
             $.ajax({
