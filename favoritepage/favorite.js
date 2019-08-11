@@ -46,7 +46,19 @@ $(document).ready(function () {
 
     });
 
+    $(document).on("click", ".remove-fav", function() {
+        var recipeId = $(this).attr("data-recipeId");
+        console.log("recipeId: " + recipeId);
 
+        favoritesArray = _.without(favoritesArray, recipeId)
+
+        console.log(favoritesArray);
+
+        database.ref("/favorites").set({
+            favoritesArray: favoritesArray,
+          })
+
+    })
 
     $(document).on("click", ".recipe-card", function () {
 
@@ -59,7 +71,7 @@ $(document).ready(function () {
     function printCards() {
         for (i = 0; i < favoritesArray.length; i++) {
 
-            var queryURL = "https://api.spoonacular.com/recipes/" + favoritesArray[i] + "/summary?apiKey=3bcac49f5a044aedacf4b3fb25eb9f89"
+            var queryURL = "https://api.spoonacular.com/recipes/" + favoritesArray[i] + "/summary?apiKey=c0dd1224e5f348c785c7651d307e1e88"
             console.log(queryURL);
 
             $.ajax({
@@ -94,19 +106,27 @@ $(document).ready(function () {
                 var bodyDiv = $("<div>");
                 bodyDiv.addClass("card-body");
 
+                // <span class='float-right'><i class='far fa-times-circle remove-fav'></i></span>
 
-                var a = $("<span class='float-right'><i class='far fa-times-circle remove-fav'></i></span><a href='../recipepage/recipe.html'><h5 class='card-title'>" + title + "</h5></a>");
-                // a.attr("href", "../recipepage/recipe.html");
-                // var h5 = $("<h5>");
-                // h5.addClass("card-title");
-                // h5.text(title);
-                // a.append(h5);
+                var span = $("<span>");
+                span.addClass("float-right");
+                var icon = $("<i>");
+                icon.addClass("far").addClass("fa-times-circle").addClass("remove-fav");
+                icon.attr("data-recipeId", response.id);
+                span.append(icon);
+
+                var a = $("<a>");
+                a.attr("href", "../recipepage/recipe.html");
+                var h5 = $("<h5>");
+                h5.addClass("card-title");
+                h5.text(title);
+                a.append(h5);
 
                 var p = $("<p>");
                 p.addClass("card-text");
                 p.html(summary);
 
-                bodyDiv.append(a).append(p);
+                bodyDiv.append(span).append(a).append(p);
                 contentCol.append(bodyDiv);
                 imgCol.append(img);
                 row.append(imgCol).append(contentCol);
