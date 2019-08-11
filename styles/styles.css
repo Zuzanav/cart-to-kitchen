@@ -22,3 +22,20 @@
     font-size: 22px;
     color: #084C61;
 }
+
+li {
+    font-family: 'Lora', serif;
+}
+
+h1 {
+    font-family: 'Lexend Exa', sans-serif;
+}
+
+h5 {
+    font-family: 'Lexend Exa', sans-serif;
+    color: black;
+}
+
+p {
+    font-family: 'Lora', serif;
+}

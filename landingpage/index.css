@@ -1,3 +1,43 @@
 .jumbotron {
-	background-color: #8c149c;
+	background-image: url(../assets/images/meal.jpg);
+	background-size: cover;
+	padding-top: 15%;
+	padding-bottom: 15%;
+	margin-top: 0;
+}
+
+#search-term.form-control {
+	opacity: 0.75;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	height: 50px;
+	color:black;
+}
+
+#search-button {
+	background-color: white;
+	opacity: 0.85;
+	border-style: none;
+}
+
+#search-btn-form {
+	max-width: 500px;
+	height: 50px;
+	margin: 0px auto;
+}
+
+h1 {
+	color: white;
+}
+
+#search-icon:hover {
+	color: black;
+}
+
+a {
+	color: black;
+}
+
+a:hover{
+	color: #8e1c37;
 }
