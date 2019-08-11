@@ -13,6 +13,15 @@ $(document).ready(function () {
     // Initialize Firebase
     firebase.initializeApp(firebaseConfig);
 
+<<<<<<< HEAD
+=======
+    //====================================================================================================================
+
+    //Zuzana's Addition
+
+    $(".recipeDisplay").empty();
+
+>>>>>>> master
     var queryURL = "https://api.spoonacular.com/recipes/random?number=10&apiKey=444bf8ec1b304306aa66db58304dd302"
 
     $.ajax({
@@ -60,15 +69,18 @@ $(document).ready(function () {
                 var bodyDiv = $("<div>");
                 bodyDiv.addClass("card-body");
 
+                var a = $("<a>");
+                a.attr("href", "recipepage/recipe.html");
                 var h5 = $("<h5>");
                 h5.addClass("card-title");
                 h5.text(title);
+                a.append(h5);
 
                 var p = $("<p>");
                 p.addClass("card-text");
                 p.html(summary);
 
-                bodyDiv.append(h5).append(p);
+                bodyDiv.append(a).append(p);
                 contentCol.append(bodyDiv);
                 imgCol.append(img);
                 row.append(imgCol).append(contentCol);

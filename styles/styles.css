@@ -1,5 +1,5 @@
 #nav-bar {
-    background-color: 	#F5F5F5;
+    background-color: 	black;
     border-bottom-style: solid;
     border-bottom-color: 	#707070;
     border-bottom-width: 0.5px;
@@ -18,7 +18,7 @@ input[type="text"]::placeholder {
 }
 
 #logo {
-    color: #DB3A34;
+    color: white;
     font-family: 'Rock Salt', cursive;
     font-size: 22px;
 }
