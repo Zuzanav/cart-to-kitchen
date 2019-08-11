@@ -88,3 +88,36 @@ console.log(userSelectedID);
     })
 
   });
+
+  // Favorites button functionality
+  var favoritesArray;
+
+  function snapshotToArray(snapshot) {
+    favoritesArray = [];
+
+    snapshot.forEach(function(childSnapshot) {
+        var item = childSnapshot.val();
+        item.key = childSnapshot.key;
+
+        favoritesArray.push(item);
+    });
+
+    return favoritesArray;
+};
+  
+firebase.database().ref('/favorites/favoritesArray').on('value', function(snapshot) {
+  snapshotToArray(snapshot);
+  console.log(favoritesArray);
+});
+
+  // favorites button on click function
+  $(document).on("click", "#fav-btn", function() {
+    
+    favoritesArray.push(userSelectedID);
+    console.log("favoritesArray to be pushed to firebase: " + favoritesArray);
+
+    database.ref("/favorites").set({
+      favoritesArray: favoritesArray,
+    })
+    
+  })
