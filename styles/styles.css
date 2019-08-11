@@ -31,9 +31,9 @@ input[type="text"]::placeholder {
     color: #DB3A34;
 }
 
-#list-icon {
+#list-icon{
     font-size: 22px;
-    color: #084C61;
+    color: white;
 }
 #search-button{
     width: 100%;
