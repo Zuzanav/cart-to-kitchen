@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>Cart to kitchen</title>
+  <title>Cart to Kitchen</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -14,6 +14,8 @@
   <!-- Google Fonts -------------------------------------------------------------------------------------------->
   <link href="https://fonts.googleapis.com/css?family=Rock+Salt&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Crimson+Text&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Lexend+Exa&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Lora&display=swap" rel="stylesheet">
 
  <!-- FONT AWESOME -->
  <script src="https://kit.fontawesome.com/f53fc5f70f.js"></script>
@@ -26,6 +28,7 @@
   <link rel="stylesheet" type="text/css" href="listpage/list.css">
   <link rel="stylesheet" type="text/css" href="favoritepage/favorite.css">
   <link rel="stylesheet" type="text/css" href="recipepage/recipe.css">
+  <link rel="stylesheet" type="text/css" href="landingpage/index.css">
 
   <!--  Firebase JS SDK  ---------------------------------------------------------------------------------------->
   <script src="https://www.gstatic.com/firebasejs/6.3.4/firebase-app.js"></script>
@@ -48,20 +51,20 @@
     <a href="index.html" class="text-center" id="logo"> Cart to Kitchen</a>
     <a href="listpage/list.html" class="fas fa-bars" id="list-icon"></a>
   </nav>
-  <br>
-  <div class="container">
-    <div class="jumbotron">
 
-
-      <div class="input-group mb-3">
+  <div class="jumbotron">
+      <!-- <h1 id="landingpg-intro" class="display-4 text-center">  </h1> -->
+      <div class="input-group mb-3 justify-content-center" id="search-btn-form">
         <div class="input-group-prepend">
-          <button class="btn btn-outline-secondary" type="button" id="search-button">search</button>
-         
+          <button class="btn btn-outline-secondary" type="button" id="search-button">
+              <i class="fas fa-search" id="search-icon"></i>
+          </button>
         </div>
         <input type="text" class="form-control" id="search-term">
-        
       </div>
     </div>
+
+  <div class="container">
     
   </div>
 
