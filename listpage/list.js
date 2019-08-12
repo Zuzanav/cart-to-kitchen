@@ -33,7 +33,7 @@ $(document).ready(function () {
 
     database.ref("/list").orderByChild("dateAdded").limitToLast(1).on("child_added", function () {
         for (let i = 0; i < ingredientArr.length; i++) {
-            $("#groceryList").append("<li>" + ingredientArr[i] + "</li>");
+            $("#groceryList").append("<li>" + ingredientArr[i] + "<input type='checkbox'> </li>");
 
         };
     });
