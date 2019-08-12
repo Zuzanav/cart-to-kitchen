@@ -27,6 +27,14 @@
     margin: 30px;
 }
 
+#img-ingred-box {
+    padding-top: 15px;
+    margin-bottom: 25px;
+    padding-left: 15%;
+    padding-right: 15%;
+
+}
+
 #fav-btn {
     font-family: 'Lexend Exa', sans-serif;
     font-size: 12px;
@@ -53,19 +61,12 @@
 hr {
     border-style: solid;
     border-color: black;
-    border-width: 4px;
-    margin-left: 10%;
-    margin-right: 10%;
+    border-width: 3px;
+    margin-left: 8%;
+    margin-right: 8%;
     margin-bottom: 20px;
 }
 
-#preparation {
-    
-}
-
-#all_ingredients {
-    float: left;
-}
 
 #recipeIngredients { /* CONTAINER FOR INSTRUCTIONS AND INGREDIENTS  */
     font-family: 'Lexend Exa', sans-serif;
@@ -85,7 +86,8 @@ hr {
     font-family: 'Lora', serif;
     margin-left: 10px;
     margin-right: 10px;
-    margin-bottom: 20px;
+    margin-bottom: 80px;
+    line-height: 30px;
 }
 
 #ingredients-section {
@@ -96,12 +98,13 @@ hr {
 
 #ingredients_header {
     font-style: strong;
+    font-family: 'Lexend Exa', sans-serif;
     font-size: 18px;
 }
 
 .recipes {
     font-family: 'Lora', serif;
-    line-height: 24px;
+    line-height: 28px;
     margin-left: 10px;
 }
 
@@ -109,3 +112,4 @@ hr {
     color: #8e1c37;
     font-size: 18px;
 }
+
