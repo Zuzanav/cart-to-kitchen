@@ -8,8 +8,8 @@
 
 #search-term.form-control {
 	opacity: 0.75;
-	padding-top: 10px;
-	padding-bottom: 10px;
+	padding-top: 30px;
+	padding-bottom: 30px;
 	height: 50px;
 	color:black;
 }
@@ -17,7 +17,8 @@
 #search-button {
 	background-color: white;
 	opacity: 0.85;
-	border-style: none;
+	border-style: solid;
+	border-color: lightgray;
 }
 
 #search-btn-form {
@@ -30,14 +31,11 @@ h1 {
 	color: white;
 }
 
+#search-icon {
+	font-size: 20px;
+
+}
+
 #search-icon:hover {
 	color: black;
-}
-
-a {
-	color: black;
-}
-
-a:hover{
-	color: #8e1c37;
 }

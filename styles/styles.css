@@ -39,3 +39,11 @@ h5 {
 p {
     font-family: 'Lora', serif;
 }
+
+a {
+	color: black;
+}
+
+a:hover{
+	color: #8e1c37;
+}
