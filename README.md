@@ -10,11 +10,10 @@ This project was made for the UCSD Full Stack Web Development Bootcamp using the
 
 ## Screenshots
 
-<img width="1440" alt="Screen Shot 2019-08-12 at 4 39 31 PM" src="https://user-images.githubusercontent.com/50184318/62905544-ce0b6580-bd1f-11e9-807a-6b922ab1c02a.png">
-
-<img width="1440" alt="Screen Shot 2019-08-12 at 4 40 42 PM" src="https://user-images.githubusercontent.com/50184318/62905581-f4c99c00-bd1f-11e9-8e32-4ccd2e983dea.png">
-
-<img width="1440" alt="Screen Shot 2019-08-12 at 4 41 07 PM" src="https://user-images.githubusercontent.com/50184318/62905591-027f2180-bd20-11e9-9cbd-3074ce74bee2.png">
+![LandingPage_ReadMe](https://user-images.githubusercontent.com/50184318/62906260-e2049680-bd22-11e9-9043-857527176971.jpg)
+![RecipePage_ReadMe](https://user-images.githubusercontent.com/50184318/62906258-e2049680-bd22-11e9-8141-e412b49304b7.jpg)
+![FavoritesPage_ReadMe](https://user-images.githubusercontent.com/50184318/62906261-e29d2d00-bd22-11e9-8498-4f453e897998.jpg)
+![ListPage_ReadMe](https://user-images.githubusercontent.com/50184318/62906259-e2049680-bd22-11e9-8017-81b362210c6e.jpg)
 
 ## Roadmap
 
